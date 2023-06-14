@@ -2,14 +2,11 @@ const express = require("express");
 const app = express();
 const twilio = require("twilio");
 
-// const client = require("twilio")(
-//   "ACc5133a914b2ad56df1eead524819c7a7",
-//   "c6cd8445c0574d325ff2f28ab708bdbc"
-// );
+
 
 async function sendSMS() {
-  const accountSid = "ACc5133a914b2ad56df1eead524819c7a7";
-  const authToken = "c6cd8445c0574d325ff2f28ab708bdbc";
+  const accountSid = "put your sid";
+  const authToken = "put your auth token";
   const client = twilio(accountSid, authToken);
   const OTP = Math.floor(Math.random() * 9000 + 1000);
   client.messages
